@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head> 
+    <title>RRP_Primary - Alarms</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	<style>
+	.design{
+	width:150px; height:30px;
+	background-color:lightgray;
+	}
+	</style>
+	
+	<center>
+    <h1>ALARMS</h1>
+    <form action="#" th:action="@{/greeting}" th:object="${greeting}" method="post">
+
+		<p>PLC:
+        <select id="optionsList" name="optionsListId" th:field="*{content}" class="design">
+            <option th:each="greeting : ${greetings}" th:value="${greeting.getContent()}"
+                    th:text="${greeting.getContent()}" ></option>
+        </select>
+        
+        
+        Alm No: <input type="text" th:field="*{id}" /><input type="reset" value="Reset" /></p>
+        
+
+        <a href="/files/aa.pdf#page=2" target="_blank" >Open</a>
+        <a href="/files/ALARMS.xlsx" target="_blank" >Open</a>
+
+
+        <p>
+        <embed src="files/aa.pdf" width="600" height="500" alt="pdf" pluginspage="http://www.adobe.com/products/acrobat/readstep2.html">
+        </p>
+        
+        <p><input type="submit" value="Electrical Drawings" /> 
+           <input type="submit" value="Photos" />
+           <input type="submit" value="Step7" />
+           <input type="submit" value="Comments" /></p>
+        
+    </form>
+    </center>
+</body>
+</html>
